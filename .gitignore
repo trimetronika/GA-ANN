@@ -1,0 +1,15 @@
+# File sementara Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# File besar
+data/raw/*
+data/processed/*
+experiments/results/*.h5
+experiments/results/*.pkl
+experiments/results/*.csv
+experiments/results/*.png
+
+# File sistem
+.DS_Store
+*.log
