@@ -1,0 +1,106 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel>=0.40.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ga-ann-ihsg"
+version = "1.0.0"
+description = "Peramalan IHSG menggunakan Algoritma Genetika dan Jaringan Saraf Tiruan"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Tri Busono Wibowo", email = "tribusonowibowo@gmail.com"}
+]
+maintainers = [
+    {name = "Tri Busono Wibowo", email = "tribusonowibowo@gmail.com"}
+]
+keywords = ["machine-learning", "genetic-algorithm", "neural-network", "time-series", "forecasting"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "pandas>=2.0.0,<3.0.0",
+    "numpy>=1.24.0,<2.0.0",
+    "scikit-learn>=1.3.0,<2.0.0",
+    "tensorflow>=2.13.0,<3.0.0",
+    "keras>=2.13.0,<3.0.0",
+    "deap>=1.4.0,<2.0.0",
+    "matplotlib>=3.7.0,<4.0.0",
+    "seaborn>=0.12.0,<1.0.0",
+    "statsmodels>=0.14.0,<1.0.0",
+    "scipy>=1.11.0,<2.0.0",
+    "jupyter>=1.0.0,<2.0.0",
+    "openpyxl>=3.1.0,<4.0.0",
+    "tqdm>=4.65.0,<5.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=23.0.0,<24.0.0",
+    "flake8>=6.0.0,<7.0.0",
+    "pytest>=7.4.0,<8.0.0",
+    "mypy>=1.5.0,<2.0.0",
+    "isort>=5.12.0,<6.0.0",
+    "pytest-cov>=4.1.0,<5.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/trimetronika/GA-ANN"
+Repository = "https://github.com/trimetronika/GA-ANN.git"
+Issues = "https://github.com/trimetronika/GA-ANN/issues"
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"

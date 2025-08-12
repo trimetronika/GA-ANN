@@ -38,6 +38,11 @@ penelitian/
 
 ## 🚀 Cara Menjalankan
 
+> **⚡ Untuk instalasi cepat (5 menit), lihat [QUICKSTART.md](QUICKSTART.md)**  
+> **📖 Untuk panduan instalasi lengkap, lihat [INSTALLATION.md](INSTALLATION.md)**
+
+### Metode 1: Menggunakan pip (Direkomendasikan)
+
 1. **Clone repository**:
    ```bash
    git clone https://github.com/trimetronika/GA-ANN.git
@@ -53,6 +58,110 @@ penelitian/
    ```bash
    jupyter notebook GA-ANN-Final.ipynb
    ```
+
+### Metode 2: Menggunakan setup.py
+
+```bash
+git clone https://github.com/trimetronika/GA-ANN.git
+cd GA-ANN
+pip install -e .
+```
+
+### Metode 3: Menggunakan pyproject.toml (Modern)
+
+```bash
+git clone https://github.com/trimetronika/GA-ANN.git
+cd GA-ANN
+pip install -e .
+```
+
+### Development Setup
+
+Untuk development dan testing:
+
+```bash
+pip install -e ".[dev]"
+```
+
+### Environment Setup
+
+Disarankan menggunakan virtual environment:
+
+```bash
+# Buat virtual environment
+python -m venv venv
+
+# Aktifkan virtual environment
+# Windows:
+venv\Scripts\activate
+# Linux/Mac:
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+## 🔧 Troubleshooting
+
+### Error: "Import setuptools could not be resolved"
+
+Jika Anda mengalami error terkait `setuptools`, gunakan salah satu metode berikut:
+
+#### Metode 1: Menggunakan Script Installer (Direkomendasikan)
+
+**Windows:**
+```bash
+install.bat
+```
+
+**Linux/Mac:**
+```bash
+chmod +x install.sh
+./install.sh
+```
+
+#### Metode 2: Manual Installation
+
+```bash
+# Upgrade pip dan install setuptools
+python -m pip install --upgrade pip
+python -m pip install setuptools>=65.0 wheel>=0.40.0
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Install package
+pip install -e .
+```
+
+#### Metode 3: Menggunakan Python Script
+
+```bash
+python install_dependencies.py
+```
+
+### Error: "Module not found"
+
+Jika ada module yang tidak ditemukan:
+
+```bash
+# Install semua dependencies termasuk yang optional
+pip install -r requirements.txt
+pip install -e ".[dev]"
+```
+
+### Error: "Permission denied"
+
+**Windows:**
+- Jalankan Command Prompt sebagai Administrator
+- Atau gunakan: `pip install --user -r requirements.txt`
+
+**Linux/Mac:**
+```bash
+sudo pip install -r requirements.txt
+# Atau gunakan virtual environment
+```
+```
 
 ## 📊 Hasil Utama
 
@@ -81,7 +190,7 @@ Kontribusi sangat diterima! Silakan buat pull request atau buka issue untuk disk
 ## 📞 Kontak
 
 - GitHub: [@trimetronika](https://github.com/trimetronika)
-- Email: [email protected]
+- Email: tribusonowibowo@gmail.com
 
 ---
 
