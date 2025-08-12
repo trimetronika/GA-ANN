@@ -2,7 +2,7 @@
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 
-# File besar
+# File besar dan data
 data/raw/*
 data/processed/*
 experiments/results/*.h5
@@ -10,9 +10,22 @@ experiments/results/*.pkl
 experiments/results/*.csv
 experiments/results/*.png
 
+# Model files yang besar
+*.keras
+*.h5
+*.pkl
+*.joblib
+
 # File sistem
 .DS_Store
 *.log
+Thumbs.db
+
+# File temporary
+*.tmp
+*.temp
+status
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
